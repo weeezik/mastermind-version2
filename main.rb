@@ -1,3 +1,5 @@
+require 'io/console'
+
 class Game
   # States:
     # during the game or game has ended
@@ -24,27 +26,7 @@ class Game
   end
 end
 
-class Board
-  #States:
-      # visual game interface includes GuessPositions and Feedback Positions side by side
-      # 4 guess pegs per row
-      # 4 feedback pegs per row
-  #Behaviors:
-      # compare user pegs with computer pegs to output feedback pegs
-end
-
-# class Positions
-#   def initialize (type)
-#     if type == "guess"
-#         @colors = [:red, :green, :yellow, :blue, :cyan, :magenta]
-#     elsif type == "feedback"
-#         @colors = [:black, :white]
-#     else
-#       "Invalid position type"
-#     end
-#   end
-#   attr_accessor @colors
-# end
+require_relative 'lib/computer'
 
 
 module Positions
@@ -72,7 +54,7 @@ module Positions
 
 end
 
-class Player
+class Player < Game
   # States:
       # turns = 12 (to start)
     @@turns = 12
@@ -82,21 +64,50 @@ class Player
       @@turns
     end
       # enter their pegs
+    def Player.turn
+      user_pegs = []
+      4.times do
+        user_input = STDIN.getch #numbers 1-6
+        #convert user_input to user_color using input_to_color super method
+        user_pegs << user_color
+      end
       
+    end
       # delete one turn after every 4 pegs entered
     def Player.remove_turn
       @@turns -= 1
     end
+
 end
 
-class Computer
-  # Behaviors:
-  # generate random peg combination
-  def self.generate_secret_code colors
-    comp_pegs = []
-    4.times do
-      comp_pegs << colors.sample
-    end
-    comp_pegs
-  end
+class Board < Game
+  include Positions
+  #States:
+      # visual game interface includes GuessPositions and Feedback Positions side by side
+      # 4 guess pegs per row
+      # 4 feedback pegs per row
+  #Behaviors:
+      # compare user pegs with computer pegs to output feedback pegs
 end
+
+
+# def input_to_color input
+#   case input
+#   when "1"
+#     :red
+#   when "2"
+#     :green
+#   when "3"
+#     :yellow
+#   when "4"
+#     :blue
+#   when "5"
+#     :cyan
+#   when "6"
+#     :magenta
+#   else
+#     puts "Invalid input"
+#   end
+# end
+
+

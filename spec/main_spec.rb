@@ -68,12 +68,10 @@ end
 describe "Player class instance method" do
   context "when it is the users turn" do
     it "to enter a number that outputs one of the six colors" do
-      expect "1".type.to eq(4) #placeholder
+      Player.turn
     end
   end
 end
-
-
 
 #Computer class tests
 describe "the output of the computer class method" do
