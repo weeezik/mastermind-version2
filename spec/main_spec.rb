@@ -10,3 +10,11 @@ describe "game class" do
   end
 end
 
+describe "game class" do
+  context "method will output the game status by default" do
+    it "to be true" do
+      expect(Game.status).to eq(true)
+    end
+  end
+end
+

@@ -1,6 +1,10 @@
 class Game
   # States:
     # during the game or game has ended
+  @@game_start = true
+  def Game::status
+    @@game_start
+  end
   # Behaviors: 
     # judge feedback pegs to determine if user wins
     # judge player turn count to determine if user wins
