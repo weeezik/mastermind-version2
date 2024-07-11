@@ -65,12 +65,41 @@ describe "an instance method" do
   end
 end
 
+describe "Player class instance method" do
+  context "when it is the users turn" do
+    it "to enter a number that outputs one of the six colors" do
+      expect "1".type.to eq(4) #placeholder
+    end
+  end
+end
+
+
+
 #Computer class tests
 describe "the output of the computer class method" do
   context "when the game is initiated" do
     it "prints four randomly selected colors" do
       example_colors_array = [:red, :green, :yellow, :blue, :cyan, :magenta]
       expect(Computer.generate_secret_code(example_colors_array).length).to eq(4)
+    end
+  end
+end
+
+#Position class tests
+describe "position class" do
+  context "create a new guess_position object" do
+    it "outputs an array with a length of six (6 colors)" do
+      guess_position = Positions::GuessPositions.new
+      expect(guess_position.colors.count).to eq(6)
+    end
+  end
+end
+
+describe "position" do
+  context "create a new feedback_position object" do
+    it "outputs an array with a length of two (2 colors)" do
+      feedback_position = Positions::FeedbackPositions.new
+      expect(feedback_position.colors.count).to eq(2)
     end
   end
 end
