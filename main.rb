@@ -31,18 +31,20 @@ class Board
       # compare user pegs with computer pegs to output feedback pegs
 end
 
-class GuessPositions
-  # States:
-    # 4 per row
-    # empty or selected
-    # 1 of 6 colored pegs 
-  # Behvaviors:
-    # add colored pegs
-end
+module Positions
+  class GuessPositions
+    # States:
+      # 4 per row
+      # empty or selected
+      # 1 of 6 colored pegs 
+    # Behvaviors:
+      # add colored pegs
+  end
 
-class FeedbackPositions
-  # States:
-        # black, white, or empty
+  class FeedbackPositions
+    # States:
+          # black, white, or empty
+  end
 end
 
 class Player
