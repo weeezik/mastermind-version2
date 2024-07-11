@@ -5,9 +5,23 @@ class Game
   def Game::status
     @@game_start
   end
+  def Game::end
+    @@game_start = false
+  end
   # Behaviors: 
     # judge feedback pegs to determine if user wins
-    # judge player turn count to determine if user wins
+  def peg_check
+    # judge feedback pegs to determine if user wins/loses (i.e., comparison logic)
+    # if there is winner/loser
+    @@game_start = false
+    @@game_start
+  end
+  def turn_check
+    # judge player turns to determine if user wins/loses
+    # if there is winner, return
+    @@game_start = false
+    @@game_start
+  end
 end
 
 class Board
@@ -34,13 +48,27 @@ end
 class Player
   # States:
       # turns = 12 (to start)
+    @@turns = 12
   # Behaviors: 
       # access turns
+    def Player.turns
+      @@turns
+    end
       # enter their pegs
       # delete one turn after every 4 pegs entered
+    def Player.remove_turn
+      @@turns -= 1
+    end
 end
 
 class Computer
   # Behaviors:
   # generate random peg combination
+  def self.generate_secret_code colors
+    comp_pegs = []
+    4.times do
+      comp_pegs << colors.sample
+    end
+    comp_pegs
+  end
 end
