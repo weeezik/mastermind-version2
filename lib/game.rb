@@ -24,13 +24,16 @@ class Game
         feedback_pegs << :empty
       end
     end
-    @game_on = false if feedback_pegs == [:black, :black, :black, :black]
+   if feedback_pegs == [:black, :black, :black, :black]
+    @game_on = false
+    puts "Player guessed correctly!"
+   end
     feedback_pegs
   end
-  def turn_check
-    # judge amount of player turns left
-    # if there is winner, return
-    @game_on = false
-    @game_on
+  def turn_check player_turns
+    if player_turns == 12
+      @game_on = false
+      puts "Player has no more turns left."
+    end
   end
 end

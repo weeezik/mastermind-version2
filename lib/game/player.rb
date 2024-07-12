@@ -22,6 +22,7 @@ class Player
         user_color = input_to_color user_input
         user_pegs << user_color
       end
+      self.remove_turn
       user_pegs
     end
 

@@ -12,13 +12,14 @@ p computer_input
 # 2. User inputs guess
 player = Player.new
 player_input = player.turn
-player.remove_turn
 p player_input
 # 3a. Check if user input matches computer's secret code.
 feedback_pegs = mastermind.peg_check(player_input, computer_input)
 p feedback_pegs
 # 3b. Check user turn count
 p player.turns
+mastermind.turn_check(player.turns)
+
   
 
 
