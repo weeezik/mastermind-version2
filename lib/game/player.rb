@@ -1,6 +1,6 @@
 require 'io/console'
 
-require_relative '../number_to_color'
+require_relative 'positions/number_to_color'
 
 class Player
   include NumberToColor

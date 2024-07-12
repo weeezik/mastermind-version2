@@ -1,33 +1,6 @@
 require_relative 'lib/game'
-
 require_relative 'lib/game/computer'
-
-module Positions
-  class GuessPositions
-    def initialize
-      # 1 of 6 colored pegs 
-      @colors = [:red, :green, :yellow, :blue, :cyan, :magenta]
-      # empty or selected
-      
-    end
-    attr_accessor :colors  
-    # Behaviors:
-      # add colored pegs to board
-      # super + colors[user_input]
-      # super fucntion refers to board methods, which will add a peg to the board of a color selected by the player
-  end
-
-  class FeedbackPositions
-    attr_accessor :colors
-    def initialize
-      # black, white, or empty
-      @colors = [:black, :white]
-    end          
-  end
-
-end
-
-
+require_relative 'lib/game/positions'
 
 class Board < Game
   include Positions
@@ -38,8 +11,3 @@ class Board < Game
   #Behaviors:
       # compare user pegs with computer pegs to output feedback pegs
 end
-
-
-
-
-
