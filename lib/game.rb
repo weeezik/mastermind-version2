@@ -18,7 +18,7 @@ class Game
     player_input.each_with_index do |color, index|
       if computer_input[index] == color
         feedback_pegs << :black
-        elsif computer_input.include? color == true
+      elsif computer_input.include? color
           feedback_pegs << :white
       else
         feedback_pegs << :empty
