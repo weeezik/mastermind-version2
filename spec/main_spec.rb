@@ -51,7 +51,8 @@ end
 describe "output" do
   context "when creating a player object" do
     it "returns the class variable @turns" do
-      expect(Player.turns).to eq(12)
+      player = Player.new
+      expect(player.turns).to eq(12)
     end
   end
 end
@@ -59,19 +60,20 @@ end
 describe "an instance method" do
   context "after a player has played 4 pegs" do
     it "removes a turn from the player object" do
-      Player.remove_turn
-      expect(Player.turns).to eq(11)
+      player = Player.new
+      expect(player.remove_turn).to eq(11)
     end
   end
 end
 
-describe "Player class instance method" do
-  context "when it is the users turn" do
-    it "to enter a number that outputs one of the six colors" do
-      Player.turn
-    end
-  end
-end
+# describe "Player class method" do
+#   context "when it is the users turn" do
+#     it "to enter a number that outputs one of the six colors" do
+#       player = Player.new
+#       expect (player.turn).to eq
+#     end
+#   end
+# end
 
 #Computer class tests
 describe "the output of the computer class method" do
