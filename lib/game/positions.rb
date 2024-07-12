@@ -9,6 +9,9 @@ module Positions
     attr_accessor :colors  
     # Behaviors:
       # add colored pegs to board
+    def add_user_pegs_to_board user_pegs
+      
+    end
       # super + colors[user_input]
       # super fucntion refers to board methods, which will add a peg to the board of a color selected by the player
   end

@@ -18,8 +18,7 @@ class Player
     def turn
       user_pegs = []
       4.times do
-        user_input = STDIN.getch #numbers 1-6
-        #convert user_input to user_color using input_to_color super method
+        user_input = STDIN.getch
         user_color = input_to_color user_input
         user_pegs << user_color
       end
