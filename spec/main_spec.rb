@@ -47,40 +47,13 @@ describe "an instance method" do
   end
 end
 
-#Player class tests
-describe "output" do
-  context "when creating a player object" do
-    it "returns the class variable @turns" do
-      player = Player.new
-      expect(player.turns).to eq(12)
-    end
-  end
-end
-
-describe "an instance method" do
-  context "after a player has played 4 pegs" do
-    it "removes a turn from the player object" do
-      player = Player.new
-      expect(player.remove_turn).to eq(11)
-    end
-  end
-end
-
-# describe "Player class method" do
-#   context "when it is the users turn" do
-#     it "to enter a number that outputs one of the six colors" do
-#       player = Player.new
-#       expect (player.turn).to eq
-#     end
-#   end
-# end
-
 #Computer class tests
 describe "the output of the computer class method" do
   context "when the game is initiated" do
     it "prints four randomly selected colors" do
       example_colors_array = [:red, :green, :yellow, :blue, :cyan, :magenta]
-      expect(Computer.generate_secret_code(example_colors_array).length).to eq(4)
+      computer = Computer.new
+      expect(computer.generate_secret_code(example_colors_array).length).to eq(4)
     end
   end
 end
