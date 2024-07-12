@@ -1,7 +1,3 @@
-require_relative 'lib/game'
-require_relative 'lib/game/computer'
-require_relative 'lib/game/positions'
-
 class Board < Game
   include Positions
   #States:
