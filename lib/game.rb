@@ -3,26 +3,34 @@
 class Game
   # States:
     # during the game or game has ended
-  @@game_start = true
-  def Game::status
-    @@game_start
+  def initialize
+    @game_on = true
   end
-  def Game::end
-    @@game_start = false
+  attr_accessor :game_on
+  def end
+    @game_on = false
   end
   # Behaviors: 
     # judge feedback pegs to determine if user wins
-  def peg_check
-    # puts user_pegs; puts comp_pegs
+  def peg_check player_input, computer_input
     # judge feedback pegs to determine if user wins/loses (i.e., comparison logic)
-    # if there is winner/loser
-    @@game_start = false
-    @@game_start
+    feedback_pegs = []
+    player_input.each_with_index do |color, index|
+      if computer_input[index] == color
+        feedback_pegs << :black
+        elsif computer_input.include? color == true
+          feedback_pegs << :white
+      else
+        feedback_pegs << :empty
+      end
+    end
+    @game_on = false if feedback_pegs == [:black, :black, :black, :black]
+    feedback_pegs
   end
   def turn_check
-    # judge player turns to determine if user wins/loses
+    # judge amount of player turns left
     # if there is winner, return
-    @@game_start = false
-    @@game_start
+    @game_on = false
+    @game_on
   end
 end
