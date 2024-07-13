@@ -1,3 +1,5 @@
+require 'colorize'
+
 require_relative 'lib/game'
 require_relative 'lib/game/computer'
 require_relative 'lib/game/player'
@@ -8,25 +10,18 @@ mastermind = Game.new
 # 1. Computer generate's secret code.
 computer = Computer.new
 computer_input = computer.generate_secret_code
-p computer_input
 # 2. User inputs guess
 player = Player.new
-player_input = player.turn
-p player_input
+
+puts "Each number corresponds to the color placed on the board.
+1=>#{"Red".colorize(:red)} 2=>Green 3=>Yellow 4=>Blue 5=>Cyan 6=>Magenta"
+while mastermind.game_on == true do
+  player_input = player.turn
+  p player_input
 # 3a. Check if user input matches computer's secret code.
-feedback_pegs = mastermind.peg_check(player_input, computer_input)
-p feedback_pegs
+  feedback_pegs = mastermind.peg_check(player_input, computer_input)
+  p feedback_pegs
 # 3b. Check user turn count
-p player.turns
-mastermind.turn_check(player.turns)
-
-  
-
-
-
-
-
-
-
-
-
+  p player.turns
+  mastermind.turn_check(player.turns)
+end

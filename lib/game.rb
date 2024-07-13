@@ -31,7 +31,7 @@ class Game
     feedback_pegs
   end
   def turn_check player_turns
-    if player_turns == 12
+    if player_turns == 0
       @game_on = false
       puts "Player has no more turns left."
     end

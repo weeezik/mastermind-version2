@@ -31,7 +31,7 @@ describe "Game class" do
   context "checking to see if the turn_check function" do
     it "returns a @game_on value that is false" do
       mastermind = Game.new
-      mastermind.turn_check
+      mastermind.turn_check 12
       expect(mastermind.game_on).to eq(false)
     end
   end

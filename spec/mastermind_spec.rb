@@ -4,8 +4,7 @@ describe "Gameplay" do
   context "first step" do
     it "computer generates a random 4-color array" do
       computer = Computer.new
-      possible_colors = [:red, :green, :yellow, :blue, :cyan, :magenta]
-      computer_input = computer.generate_secret_code possible_colors
+      computer_input = computer.generate_secret_code
       expect(computer_input.size).to eq(4)
     end
   end
