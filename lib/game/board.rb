@@ -1,4 +1,6 @@
-class Board < Game
+require_relative 'positions'
+
+class Board
   include Positions
   #States:
       # visual game interface includes GuessPositions and Feedback Positions side by side

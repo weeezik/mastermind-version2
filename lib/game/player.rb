@@ -4,14 +4,9 @@ require_relative 'positions/number_to_color'
 
 class Player
   include NumberToColor
-  # States:
-      # turns = 12 (to start)
     def initialize
       @turns = 12
     end
-
-  # Behaviors: 
-      # access turns
     attr_accessor :turns
 
       # enter their pegs

@@ -14,12 +14,11 @@ computer = Computer.new
 computer_input = computer.generate_secret_code
 
 player = Player.new
-small_circle = "\u23FA".encode('utf-8')
-big_circle = "\u2B24".encode('utf-8')
-# puts small_circle.colorize(:magenta)
-puts "#{big_circle.colorize(:red)}  #{big_circle.colorize(:green)}"
+
 puts "Each number corresponds to the color placed on the board.
-1=>#{"Red".colorize(:red)} 2=>Green 3=>Yellow 4=>Blue 5=>Cyan 6=>Magenta"
+1=>#{"Red".colorize(:red)} 2=>#{"Green".colorize(:green)} 3=>#{"Yellow".colorize(:yellow)} 
+4=>#{"Blue".colorize(:blue)} 5=>#{"Cyan".colorize(:cyan)} 6=>#{"Magenta".colorize(:magenta)}"
+
 while mastermind.game_on == true do
   # 2. User inputs guess
   player_input = player.turn
