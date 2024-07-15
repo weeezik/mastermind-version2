@@ -21,7 +21,7 @@ class Game
       elsif computer_input.include? color
           feedback_pegs << :white
       else
-        feedback_pegs << :empty
+        feedback_pegs << :grey
       end
     end
    if feedback_pegs == [:black, :black, :black, :black]

@@ -29,11 +29,12 @@ while mastermind.game_on == true do
   # 2. User inputs guess
   player_input = player.turn
   Positions.user_input_to_board_display(player_input, guess_positions.guess_colors_hash)
-  puts "\n" + guess_positions.show
 # 3a. Check if user input matches computer's secret code.
   feedback_pegs = mastermind.peg_check(player_input, computer_input)
-  p feedback_pegs
+  Positions.feedback_to_board_display(feedback_pegs, feedback_positions.feedback_colors_hash)
+  # Show output
+  puts guess_positions.show + "   " + feedback_positions.show
 # 3b. Check user turn count
-  puts "Turns left: #{player.turns}"
+  puts "You have #{player.turns} turns left."
   mastermind.turn_check(player.turns)
 end

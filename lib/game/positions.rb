@@ -51,6 +51,14 @@ module Positions
     display_positions
   end
 
+  def self.feedback_to_board_display feedback, display_positions
+    counter = 1
+    feedback.each do |color|
+      display_positions[counter] = color
+      counter += 1
+    end
+    display_positions
+  end
 end
 
 # guess_positions = Positions::GuessPositions.new
@@ -64,5 +72,6 @@ end
 
 # puts guess_positions.guess_colors_hash
 # puts guess_positions.show_guess_pegs
+
 
 
