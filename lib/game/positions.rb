@@ -10,11 +10,12 @@ module Positions
         3 => :grey,
         4 => :grey
       }
-      @guess_pegs = "#{@@big_circle.colorize(@guess_colors_hash[1])}  #{@@big_circle.colorize(@guess_colors_hash[2])}  #{@@big_circle.colorize(@guess_colors_hash[3])}  #{@@big_circle.colorize(@guess_colors_hash[4])}"      
     end
-    def display
-      @guess_pegs
+    def show
+      "#{@@big_circle.colorize(@guess_colors_hash[1])}  #{@@big_circle.colorize(@guess_colors_hash[2])}  #{@@big_circle.colorize(@guess_colors_hash[3])}  #{@@big_circle.colorize(@guess_colors_hash[4])}"
     end
+    
+    attr_accessor :guess_colors_hash
     # Behaviors:
       # add colored pegs to board
     def add_user_pegs_to_board user_pegs
@@ -34,16 +35,34 @@ module Positions
         3 => :grey,
         4 => :grey
       }
-      @feedback_pegs = "#{@@small_circle.colorize(@feedback_colors_hash[1])} #{@@small_circle.colorize(@feedback_colors_hash[2])} #{@@small_circle.colorize(@feedback_colors_hash[3])} #{@@small_circle.colorize(@feedback_colors_hash[4])}"
     end
-    def display
-      @feedback_pegs
-    end          
+    def show
+      "#{@@small_circle.colorize(@feedback_colors_hash[1])} #{@@small_circle.colorize(@feedback_colors_hash[2])} #{@@small_circle.colorize(@feedback_colors_hash[3])} #{@@small_circle.colorize(@feedback_colors_hash[4])}"
+    end
+    attr_accessor :feedback_colors_hash
+  end
+
+  def self.user_input_to_board_display player_choices, display_positions
+    counter = 1
+    player_choices.each do |color|
+      display_positions[counter] = color
+      counter += 1
+    end
+    display_positions
   end
 
 end
 
-guess_positions = Positions::GuessPositions.new
-feedback_positions = Positions::FeedbackPositions.new
-puts guess_positions.display + "    " + feedback_positions.display
+# guess_positions = Positions::GuessPositions.new
+
+# user_input = [:green, :red, :yellow, :cyan]
+
+# puts guess_positions.guess_colors_hash
+# puts guess_positions.show_guess_pegs
+
+# Positions.user_input_to_board_display(user_input, guess_positions.guess_colors_hash)
+
+# puts guess_positions.guess_colors_hash
+# puts guess_positions.show_guess_pegs
+
 
