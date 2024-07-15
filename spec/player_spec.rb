@@ -20,4 +20,10 @@ describe "Player class" do
       expect(player.turn).to eq([:red, :yellow, :cyan, :green])
     end
   end
+  context "the user enters a single number" do
+    it "outputs the corresponding number to the graphical board" do
+      player = Player.new
+      expect(player.turn).to eq()
+    end
+  end
 end
