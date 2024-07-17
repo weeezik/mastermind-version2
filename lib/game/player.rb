@@ -13,14 +13,15 @@ class Player
     attr_accessor :turns, :position_values
 
       # enter their pegs
-    def turn guess_position_array, counter = 0
+    def turn guess_position_array
+      counter = 0
       1.times do
         user_input = STDIN.getch
         user_color = input_to_color user_input
         guess_position_array[counter] = user_color
-        counter += 1
+        counter += 1 
       end
-      # Positions.user_input_to_board_display(user_pegs, guess_position_hash)
+      # Positions.user_input_to_board_display(guess_position_array, guess_position_hash)
       guess_position_array
     end
     
