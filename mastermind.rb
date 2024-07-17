@@ -20,8 +20,7 @@ guess_positions = Positions::GuessPositions.new
 feedback_positions = Positions::FeedbackPositions.new
 
 puts "Each number corresponds to the color placed on the board.".colorize(:bold)
-puts "1=>#{"Red".colorize(:red)} 2=>#{"Green".colorize(:green)} 3=>#{"Yellow".colorize(:yellow)} 
-4=>#{"Blue".colorize(:blue)} 5=>#{"Cyan".colorize(:cyan)} 6=>#{"Magenta".colorize(:magenta)}"
+puts "1=>#{"Red".colorize(:red)} 2=>#{"Green".colorize(:green)} 3=>#{"Yellow".colorize(:yellow)} 4=>#{"Blue".colorize(:blue)} 5=>#{"Cyan".colorize(:cyan)} 6=>#{"Magenta".colorize(:magenta)}"
 
 puts guess_positions.show + "   " + feedback_positions.show + "\n"
 

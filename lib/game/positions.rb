@@ -11,18 +11,13 @@ module Positions
         4 => :grey
       }
     end
+
     def show
       "#{@@big_circle.colorize(@guess_colors_hash[1])}  #{@@big_circle.colorize(@guess_colors_hash[2])}  #{@@big_circle.colorize(@guess_colors_hash[3])}  #{@@big_circle.colorize(@guess_colors_hash[4])}"
     end
-    
+
     attr_accessor :guess_colors_hash
-    # Behaviors:
-      # add colored pegs to board
-    def add_user_pegs_to_board user_pegs
-      player_input
-    end
-      # super + colors[user_input]
-      # super fucntion refers to board methods, which will add a peg to the board of a color selected by the player
+
   end
 
   class FeedbackPositions
@@ -36,10 +31,13 @@ module Positions
         4 => :grey
       }
     end
+
     def show
       "#{@@small_circle.colorize(@feedback_colors_hash[1])} #{@@small_circle.colorize(@feedback_colors_hash[2])} #{@@small_circle.colorize(@feedback_colors_hash[3])} #{@@small_circle.colorize(@feedback_colors_hash[4])}"
     end
+
     attr_accessor :feedback_colors_hash
+
   end
 
   def self.user_input_to_board_display player_choices, display_positions
@@ -59,6 +57,7 @@ module Positions
     end
     display_positions
   end
+  
 end
 
 # guess_positions = Positions::GuessPositions.new
