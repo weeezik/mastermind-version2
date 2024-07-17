@@ -21,13 +21,13 @@ describe "Game class" do
       expect(mastermind.game_on).to eq(false)
     end
   end
-  # context "checking the peg_check function" do
-  #   it "returns a @game_on value that is false" do
-  #     mastermind = Game.new
-  #     mastermind.peg_check
-  #     expect(mastermind.game_on).to eq(false)
-  #   end
-  # end
+  context "checking the peg_check function" do
+    it "returns a @game_on value that is false" do
+      mastermind = Game.new
+      mastermind.peg_check
+      expect(mastermind.game_on).to eq(false)
+    end
+  end
   context "checking to see if the turn_check function" do
     it "returns a @game_on value that is false" do
       mastermind = Game.new

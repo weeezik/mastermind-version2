@@ -14,22 +14,17 @@ describe "Player class" do
       expect(player.remove_turn).to eq(11)
     end
   end
-  context "the user enters the numbers 1, 3, 5, 2" do
-    it "outputs the array [:red, :yellow, :cyan, :green]" do
-      player = Player.new
-      expect(player.full_turn).to eq([:red, :yellow, :cyan, :green])
-    end
-  end
-  context "the user enters a single number" do
-    it "outputs the corresponding number to the graphical board" do
-      player = Player.new
-      expect(player.turn).to eq([:red])
-    end
-  end
+  # context "the user enters the numbers 1, 3, 5, 2" do
+  #   it "outputs the array [:red, :yellow, :cyan, :green]" do
+  #     player = Player.new
+  #     guess_positions = Positions::GuessPositions.new
+  #     expect(player.full_turn(guess_positions.guess_colors_hash)).to eq([:red, :yellow, :cyan, :green])
+  #   end
+  # end
   context "display output" do
     it "with each user input" do
       player = Player.new
-      expect(player.turn).to eq([:red])
+      expect(player.turn(player.position_values)).to eq([:red, :grey, :grey, :grey])
     end
   end
 

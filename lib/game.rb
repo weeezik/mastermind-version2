@@ -37,8 +37,9 @@ class Game
     end
   end
 
-  def full_turn
-    
+  def player_full_turn guess_positions_hash
+    player_input = player.turn
+    Positions.user_input_to_board_display(player_input, guess_positions_hash)
   end
 
 
