@@ -36,4 +36,12 @@ class Game
       puts "Player has no more turns left."
     end
   end
+
+  def full_turn
+    
+  end
+
+
+
+
 end

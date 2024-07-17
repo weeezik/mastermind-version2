@@ -17,13 +17,20 @@ describe "Player class" do
   context "the user enters the numbers 1, 3, 5, 2" do
     it "outputs the array [:red, :yellow, :cyan, :green]" do
       player = Player.new
-      expect(player.turn).to eq([:red, :yellow, :cyan, :green])
+      expect(player.full_turn).to eq([:red, :yellow, :cyan, :green])
     end
   end
   context "the user enters a single number" do
     it "outputs the corresponding number to the graphical board" do
       player = Player.new
-      expect(player.turn).to eq()
+      expect(player.turn).to eq([:red])
     end
   end
+  context "display output" do
+    it "with each user input" do
+      player = Player.new
+      expect(player.turn).to eq([:red])
+    end
+  end
+
 end

@@ -26,7 +26,7 @@ puts guess_positions.show + "   " + feedback_positions.show + "\n"
 
 while mastermind.game_on == true do
   # 2. User inputs guess
-  player_input = player.turn
+  player_input = player.full_turn
   Positions.user_input_to_board_display(player_input, guess_positions.guess_colors_hash)
 # 3a. Check if user input matches computer's secret code.
   feedback_pegs = mastermind.peg_check(player_input, computer_input)

@@ -3,6 +3,7 @@ require 'colorize'
 module Positions
   class GuessPositions
     @@big_circle = "\u2B24".encode('utf-8')
+
     def initialize
       @guess_colors_hash = {
         1 => :grey,
@@ -11,13 +12,10 @@ module Positions
         4 => :grey
       }
     end
-
     def show
       "#{@@big_circle.colorize(@guess_colors_hash[1])}  #{@@big_circle.colorize(@guess_colors_hash[2])}  #{@@big_circle.colorize(@guess_colors_hash[3])}  #{@@big_circle.colorize(@guess_colors_hash[4])}"
     end
-
     attr_accessor :guess_colors_hash
-
   end
 
   class FeedbackPositions
@@ -31,13 +29,10 @@ module Positions
         4 => :grey
       }
     end
-
     def show
       "#{@@small_circle.colorize(@feedback_colors_hash[1])} #{@@small_circle.colorize(@feedback_colors_hash[2])} #{@@small_circle.colorize(@feedback_colors_hash[3])} #{@@small_circle.colorize(@feedback_colors_hash[4])}"
     end
-
     attr_accessor :feedback_colors_hash
-
   end
 
   def self.user_input_to_board_display player_choices, display_positions
@@ -59,18 +54,6 @@ module Positions
   end
   
 end
-
-# guess_positions = Positions::GuessPositions.new
-
-# user_input = [:green, :red, :yellow, :cyan]
-
-# puts guess_positions.guess_colors_hash
-# puts guess_positions.show_guess_pegs
-
-# Positions.user_input_to_board_display(user_input, guess_positions.guess_colors_hash)
-
-# puts guess_positions.guess_colors_hash
-# puts guess_positions.show_guess_pegs
 
 
 
